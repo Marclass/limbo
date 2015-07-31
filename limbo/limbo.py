@@ -155,8 +155,8 @@ def relevant_environ():
 
 def init_server(args, config, Server=LimboServer, Client=SlackClient):
     init_log(config)
-	if(args.token and args.token!=""):
-		config["token"]=args.token
+    if(args.token and args.token!=""):
+        config["token"]=args.token
     logger.debug("config: {0}".format(config))
     db = init_db(args.database_name)
     hooks = init_plugins(args.pluginpath)
