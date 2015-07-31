@@ -1,8 +1,8 @@
 """!wh <Wormhole Type>{,<Wormhole Type>}* return information on what type of space a WH leads to. NOTE: masses for connections to/from k space may be wrong"""
 
 import re
-import sqlite3
-from eveIntel import sqlinterface
+#import sqlite3
+#from eveIntel import sqlinterface
 from tabulate import tabulate
 
 #"Name", "Type", "From", "To", "Lifetime", "Mass/Jump", "Max mass +-10%"]
