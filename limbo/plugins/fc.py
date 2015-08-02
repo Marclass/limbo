@@ -40,4 +40,4 @@ def on_message(msg, server):
 
     #notice="something with my kills table in the DB is fucked, this command temp disabled"
     notice=""
-    return notice+report
+    return "```"+notice+report+"```"
