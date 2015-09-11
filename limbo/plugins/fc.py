@@ -1,11 +1,11 @@
 """!fc <corp|alliance>{,<corp|alliance>}* Generates a report on a corp or alliance that attempts to list pilots by threat/ leadership ability. FCs or pilots capable of FCing tend to rank highly in the report."""
-from eveIntel.dataprocessinginterface import dataProcessingInterface
+from eveIntel.reportinterface import reportInterface
 import re
 
 
 
 
-data = dataProcessingInterface()
+r = reportInterface()
 
 
 def parse(msg):
@@ -19,7 +19,7 @@ def parse(msg):
     
     for i in range(min(5,len(req))):
         
-        reports.append(data.genLeadershipReport(req[i].strip()))
+        reports.append(r.getLeadershipReport(req[i].strip()))
 
     for i in reports:
         response = response +i

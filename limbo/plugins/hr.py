@@ -1,11 +1,11 @@
 """!hr <character|corp|alliance>{,<character|corp|alliance>}* Creates a graph of the hourly activity of given entity"""
-from eveIntel.dataprocessinginterface import dataProcessingInterface
+from eveIntel.reportinterface import reportInterface
 import re
 
 
 
 
-data = dataProcessingInterface()
+r = reportInterface()
 
 
 def parse(msg):
@@ -19,7 +19,7 @@ def parse(msg):
     
     for i in range(min(5,len(req))):
         
-        reports.append(data.genHrsReport(req[i].strip()))
+        reports.append(r.getHrsReport(req[i].strip()))
 
     for i in reports:
         response = response +i

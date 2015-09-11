@@ -1,10 +1,10 @@
 """!siege generates a report on who is sieging who today/ yesterday"""
 
-from eveIntel.dataprocessinginterface import dataProcessingInterface
+from eveIntel.reportinterface import reportInterface
 import re
 from tabulate import tabulate
 
-data = dataProcessingInterface()
+r = reportInterface()
 
 
 def on_message(msg, server):
@@ -15,7 +15,7 @@ def on_message(msg, server):
 
     searchterm = match[0]
     report =""
-    report=data.genSiegeReport()
+    report=r.getSiegeReport()
     notice="messing with some db stuff, reports might be skewed for the next few hrs\n"
 
     #notice="something with my kills table in the DB is fucked, this command temp disabled"
